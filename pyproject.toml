@@ -1,0 +1,14 @@
+[project]
+name = "minimum-excluding-set"
+version = "0.1.0"
+description = "Maintains a dynamic set of integers to instantly report the smallest missing value."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
