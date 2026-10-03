@@ -24,3 +24,10 @@ The mex of a set of integers is a fundamental value in combinatorial game theory
 ## Edge cases
 
 Only non-negative integers are accepted. Passing a negative value raises `ValueError`, and passing a non-integer raises `TypeError`. Duplicates are ignored, as with a regular Python set. The `remove` method raises `KeyError` for missing values while `discard` silently does nothing. After `clear()`, the mex is zero.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
